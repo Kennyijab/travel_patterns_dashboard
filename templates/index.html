@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Patterns Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Travel Patterns Dashboard</h1>
+        <div id="controls">
+            <label for="age">Traveler Age:</label>
+            <input type="number" id="age" name="age">
+            
+            <label for="gender">Traveler Gender:</label>
+            <select id="gender" name="gender">
+                <option value="">All</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            
+            <label for="nationality">Traveler Nationality:</label>
+            <input type="text" id="nationality" name="nationality">
+            
+            <label for="accommodationType">Accommodation Type:</label>
+            <input type="text" id="accommodationType" name="accommodationType">
+            
+            <label for="transportationType">Transportation Type:</label>
+            <input type="text" id="transportationType" name="transportationType">
+            
+            <label for="accommodationCost">Accommodation Cost:</label>
+            <input type="number" id="accommodationCost" name="accommodationCost">
+            
+            <label for="transportationCost">Transportation Cost:</label>
+            <input type="number" id="transportationCost" name="transportationCost">
+            
+            <label for="analysisType">Select Analysis:</label>
+            <select id="analysisType" multiple>
+                <option value="destByNationality">Destination by Nationality</option>
+                <option value="transByNationality">Transportation Type by Nationality</option>
+                <option value="accByNationality">Accommodation Type by Nationality</option>
+            </select>
+
+            <button id="filter">Filter Data</button>
+        </div>
+        <div id="visualization"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
